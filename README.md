@@ -17,7 +17,7 @@ adhansync-corporate/
 │   ├── AdhanSync.Workers         → Jobs de notificação e sincronização
 │   └── AdhanSync.Admin.Web       → Painel administrativo (Blazor Server)
 │
-├── docs/                         → Arquivos acadêmicos + documentação técnica
+├── docs/                         → Arquivos + documentação técnica
 ├── AdhanSync.sln                 → Solution principal
 └── README.md
 
