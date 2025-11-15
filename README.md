@@ -1,7 +1,74 @@
-Monorepo simples com:
-- apps/extension: extensão Chrome (React + TS + Vite + Tailwind)
-- apps/backend: backend (reservado para desenvolvimento posterior)
-cd apps/extension
-npm install
-npm run dev 
-npm run build
+# 📌 AdhanSync Corporate
+
+### Plataforma corporativa para cálculo e sincronização de horários de oração (Adhan)
+
+Este repositório contém a nova arquitetura oficial do **AdhanSync Corporate**, reescrita em **C# / .NET**, seguindo princípios de Clean Architecture, multi-tenant e integração com extensões de navegador.
+
+---
+
+## 🧱 Arquitetura
+
+\`\`\`
+adhansync-corporate/
+├── src/
+│ ├── AdhanSync.Core → Domínio e regras de negócio
+│ ├── AdhanSync.Infrastructure → EF Core, repositórios e integrações
+│ ├── AdhanSync.Api → API REST ASP.NET Core
+│ ├── AdhanSync.Workers → Jobs de notificação/sincronização
+│ ├── AdhanSync.Admin.Web → Painel administrativo (Blazor Server)
+│
+├── docs/ → Arquivos acadêmicos + documentação técnica
+├── AdhanSync.sln
+└── README.md
+\`\`\`
+
+---
+
+## 🚀 Tecnologias Principais
+
+- **C# / .NET 8**
+- **ASP.NET Core Web API**
+- **Entity Framework Core**
+- **Blazor Server**
+- **JWT Authentication**
+- **Serilog**
+- **Hangfire / Quartz.NET**
+- **Docker e GitHub Actions**
+
+---
+
+## ▶️ Como rodar localmente
+
+### Instalar dependências
+
+\`\`\`sh
+dotnet restore
+\`\`\`
+
+### Rodar a API
+
+\`\`\`sh
+cd src/AdhanSync.Api
+dotnet run
+\`\`\`
+
+### Rodar o painel administrativo
+
+\`\`\`sh
+cd ../AdhanSync.Admin.Web
+dotnet run
+\`\`\`
+
+---
+
+## 🧪 Testes
+
+\`\`\`sh
+dotnet test
+\`\`\`
+
+---
+
+## 📄 Licença
+
+Projeto privado (MVP em desenvolvimento).

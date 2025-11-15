@@ -1,0 +1,6 @@
+@AdhanSync.Api_HostAddress = http://localhost:5049
+
+GET {{AdhanSync.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
