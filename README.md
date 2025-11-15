@@ -1,6 +1,6 @@
-# 📌 AdhanSync Corporate
+# 📌 AdhanSync Corporate  
 
-### Plataforma corporativa para cálculo e sincronização de horários de oração (Adhan)
+Plataforma corporativa para **cálculo e sincronização de horários de oração (Adhan)** em ambientes empresariais, com foco em equipes globais, diversidade religiosa e bem-estar no trabalho.
 
 Este repositório contém a nova arquitetura oficial do **AdhanSync Corporate**, reescrita em **C# / .NET**, seguindo princípios de Clean Architecture, multi-tenant e integração com extensões de navegador.
 
@@ -8,19 +8,19 @@ Este repositório contém a nova arquitetura oficial do **AdhanSync Corporate**,
 
 ## 🧱 Arquitetura
 
-\`\`\`
+```text
 adhansync-corporate/
 ├── src/
-│ ├── AdhanSync.Core → Domínio e regras de negócio
-│ ├── AdhanSync.Infrastructure → EF Core, repositórios e integrações
-│ ├── AdhanSync.Api → API REST ASP.NET Core
-│ ├── AdhanSync.Workers → Jobs de notificação/sincronização
-│ ├── AdhanSync.Admin.Web → Painel administrativo (Blazor Server)
+│   ├── AdhanSync.Core            → Domínio e regras de negócio
+│   ├── AdhanSync.Infrastructure  → EF Core, repositórios e integrações externas
+│   ├── AdhanSync.Api             → API REST ASP.NET Core
+│   ├── AdhanSync.Workers         → Jobs de notificação e sincronização
+│   └── AdhanSync.Admin.Web       → Painel administrativo (Blazor Server)
 │
-├── docs/ → Arquivos acadêmicos + documentação técnica
-├── AdhanSync.sln
+├── docs/                         → Arquivos acadêmicos + documentação técnica
+├── AdhanSync.sln                 → Solution principal
 └── README.md
-\`\`\`
+
 
 ---
 
