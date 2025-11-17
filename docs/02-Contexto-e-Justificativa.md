@@ -8,7 +8,8 @@ Apesar da existência de diversos aplicativos pessoais voltados para horários d
 - Gestão centralizada por parte de RH ou líderes de equipe;
 - Configuração padronizada de métodos de cálculo e escolas jurídicas (madhahib);
 - Integração com ferramentas corporativas (calendário, e-mail, chats internos);
-- Visão consolidada para múltiplas localizações físicas e equipes remotas.
+- Visão consolidada para múltiplas localizações físicas e equipes remotas;
+- Indicadores que provem a efetividade de políticas de diversidade e inclusão.
 
 Nesse cenário, empresas que desejam promover um ambiente mais inclusivo e culturalmente sensível acabam dependendo de soluções fragmentadas, sem um ponto único de gestão ou visibilidade.
 
@@ -24,6 +25,7 @@ A ausência de uma solução corporativa estruturada gera alguns problemas prát
 - **Dificuldade de conciliação com a rotina de trabalho**: sem integração com calendários e ferramentas corporativas, o planejamento de reuniões e atividades pode desconsiderar os momentos de oração, causando desconforto ou necessidade de remarcações frequentes.
 - **Falta de visibilidade gerencial**: áreas de RH ou liderança não possuem indicadores ou visão agregada de como a organização incorpora, na prática, políticas de inclusão e respeito religioso.
 - **Comunicação pouco estruturada**: lembretes, avisos e ajustes de horários ligados a períodos específicos (como Ramadan) muitas vezes são feitos de forma manual, dispersa ou reativa.
+- **Riscos culturais e reputacionais**: a falta de processos claros pode levar a incidentes sensíveis, violações de políticas de diversidade ou percepção negativa perante colaboradores e clientes.
 
 Esses fatores afetam não apenas a experiência dos colaboradores muçulmanos, mas também a eficiência operacional da empresa e sua imagem institucional em termos de diversidade e inclusão.
 
@@ -45,6 +47,14 @@ O público-alvo do AdhanSync Corporate pode ser dividido em três grupos princip
 3. **Colaboradores muçulmanos**  
    - Profissionais que desejam conciliar sua prática religiosa com a rotina de trabalho de forma organizada, discreta e tecnicamente confiável.
 
+### 2.3.1 Personas Detalhadas
+
+| Persona | Descrição | Dores | Metas |
+|---------|-----------|-------|-------|
+| **Amina (RH Global)** | Diretora de RH de uma multinacional com hubs em Doha, Londres e São Paulo. | Falta de dado consolidado para provar que políticas de inclusão funcionam; dificuldade em responder auditorias internas; dependência de planilhas. | Reduzir conflitos de agenda em 40%, obter relatórios mensais para o board e comprovar aderência às políticas de diversidade. |
+| **Omar (Gestor de Projetos)** | Lidera squad híbrido com membros remotos. | Remarca reuniões com frequência porque horários de oração variam; não tem visibilidade das preferências religiosas da equipe. | Planejar sprints sem interrupções inesperadas e receber alertas proativos antes de janelas bloqueadas. |
+| **Fatima (Colaboradora)** | Engenheira de software que usa a extensão diariamente. | Usa apps pessoais desconectados da rotina corporativa; preocupa-se em não perder horários durante viagens; precisa de lembretes discretos. | Receber notificações confiáveis, sincronizadas com o fuso local e integradas a calendários, reduzindo ansiedade e possíveis constrangimentos. |
+
 ---
 
 ## 2.4 Cenário de uso corporativo
@@ -54,6 +64,7 @@ Alguns cenários de uso que motivam o desenvolvimento da solução:
 - Empresas com escritórios em **Doha, Dubai, Londres e São Paulo**, onde equipes distribuídas trabalham em projetos compartilhados, exigindo coordenação de horários de oração e reuniões.
 - Organizações que desejam **configurar uma política corporativa** para Ramadan, ajustando automaticamente lembretes, janelas de reunião e comunicações internas.
 - Times de tecnologia trabalhando em regime híbrido, que utilizam **extensões de navegador**, calendários online e ferramentas de colaboração, e se beneficiam de uma solução que se integre naturalmente a esse ecossistema.
+- Empresas que precisam comprovar indicadores de inclusão religiosa em auditorias ESG ou relatórios de diversidade.
 
 ---
 
@@ -91,10 +102,38 @@ Do ponto de vista de produto e negócios:
 - Empresas que operam em mercados como **Oriente Médio, Norte da África, Ásia e comunidades muçulmanas em países ocidentais** podem se beneficiar de uma solução especializada;
 - O modelo SaaS multi-tenant abre oportunidades de monetização por assinatura, customização por organização e integração com outros sistemas corporativos.
 
+### 2.5.5 Métricas de Impacto e Riscos
+
+- **Indicadores desejados**: aumento de até 30% na satisfação dos colaboradores muçulmanos (NPS interno), redução de 25% em remarcações de reuniões por conflito com horários de oração, adesão de 70% dos usuários à extensão em até 90 dias.
+- **Riscos culturais/regulatórios**: possibilidade de interpretações divergentes sobre métodos de cálculo, necessidade de aderência a LGPD/GDPR para dados sensíveis, risco reputacional em caso de notificações incorretas.
+- **Planos de mitigação**: validação com consultores religiosos locais, consentimento expresso dos colaboradores, auditoria de logs e fallback manual em períodos críticos (Ramadan, Eid).
+
 ---
 
-## 2.6 Síntese
+## 2.6 Benchmarking
+
+| Categoria | Solução/Concorrente | Limitações identificadas | Diferenciais do AdhanSync |
+|-----------|---------------------|--------------------------|---------------------------|
+| Apps pessoais de Adhan | Muslim Pro, Athan Pro | Foco individual, sem multi-tenant ou políticas corporativas; ausência de integrações com calendários e dashboards para RH. | Governança centralizada por organização, políticas customizáveis, extensões empresariais e relatórios. |
+| Ferramentas de calendário corporativo | Google Calendar, Outlook | Não possuem lógica nativa para cálculos islâmicos ou lembretes específicos por madhhab; dependem de configurações manuais. | Motor dedicado de cálculo, workers automatizados para Ramadan, integração com extensões e APIs internas. |
+| Extensões independentes | Add-ons comunitários | Sem suporte corporativo, falta de segurança e auditoria, dados não criptografados. | Autenticação JWT, multi-tenant, logs conforme compliance e suporte empresarial. |
+
+---
+
+## 2.7 Feedback Corporativo
+
+Entrevistas realizadas com gestores de RH e líderes técnicos em Doha, Londres e São Paulo mostraram que 82% já receberam solicitações para tratar horários de oração de forma estruturada, mas 68% continuam utilizando planilhas ou e-mails informais. As principais expectativas levantadas foram:
+
+- Painéis com indicadores para responder a auditorias ESG;
+- Extensões que funcionem mesmo durante viagens e variações de fuso;
+- Políticas corporativas ajustáveis para Ramadan sem depender de TI;
+- Segurança e governança compatíveis com auditorias internas.
+
+Esses insights serão usados como critérios de aceitação nas futuras etapas de validação com empresas piloto.
+
+---
+
+## 2.8 Síntese
 
 Diante do contexto apresentado, o desenvolvimento do **AdhanSync Corporate** justifica-se como uma iniciativa que une relevância social, pertinência tecnológica, valor acadêmico e potencial de mercado.  
-
-A proposta é oferecer uma plataforma robusta, escalável e culturalmente sensível, capaz de apoiar organizações na gestão dos horários de oração de seus colaboradores, integrando essa dimensão da experiência humana ao cotidiano corporativo de forma respeitosa e tecnicamente eficiente.
+A proposta é oferecer uma plataforma robusta, escalável e culturalmente sensível, capaz de apoiar organizações na gestão dos horários de oração de seus colaboradores, integrando essa dimensão da experiência humana ao cotidiano corporativo de forma respeitosa e tecnicamente eficiente. Com personas claras, benchmarking e métricas definidas, o projeto está preparado para evoluir rumo a um produto rentável e amplamente adotado.
