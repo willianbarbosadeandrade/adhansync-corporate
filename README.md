@@ -68,7 +68,3 @@ dotnet test
 \`\`\`
 
 ---
-
-## 📄 Licença
-
-Projeto privado (MVP em desenvolvimento).
