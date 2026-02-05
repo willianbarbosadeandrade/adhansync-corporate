@@ -1,0 +1,11 @@
+[package]
+name = "core-audio"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "core_audio"
+crate-type = ["cdylib"]
+
+[dependencies]
+cpal = "0.15"
