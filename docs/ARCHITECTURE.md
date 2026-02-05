@@ -34,3 +34,12 @@
 - Fase 2: Scheduler de alta precisão (cron + monotonic clock) com integrações IPC.
 - Fase 3: UI dark com mixer, botões configuráveis e upload de Adhan.
 - Fase 4: Cloud (NestJS/PostgreSQL) para licenciamento e sync multi-dispositivo.
+
+## Estratégia de Resiliência e Offline
+- **Distribuição local:** binário desktop (.exe / .app) com todos os artefatos embarcados.
+- **Janela de 30 dias offline:** mantém cache de horários para **40 dias** à frente, garantindo operação offline por 30 dias.
+- **Ciclo de atualização:** sincroniza com a API cloud a cada 10 dias ou sempre que o status mudar de Offline → Online. Regra: se `(agora + 10 dias) > data_fim_cache_local` então disparar fetch/refresh.
+- **Persistência:** SQLite local para horários, configurações e telemetria. Integridade verificada no boot (schema, `PRAGMA integrity_check`) pelo `PersistenceManager`.
+- **Áudio local-first:** arquivos de Adhan baixados via CDN e gravados no filesystem (Local Storage Path). O player sempre valida `fs.existsSync(path)` antes de tocar; sem streaming direto.
+- **Heartbeat de conectividade:** processo Main emite sinal periódico; ao detectar reconexão, dispara atualização de configurações pendentes do Dashboard Web e revalida o cache de horários.
+- **Recuperação:** se o cache expirar sem conectividade, usar último snapshot válido e alertar via UI; ao reconectar, reidratar banco e renovar áudios.

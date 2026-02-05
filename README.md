@@ -35,3 +35,8 @@ npm run dev   # inicia renderer + electron (ajuste scripts quando definir bundle
 ## Documentação
 - `docs/ARCHITECTURE.md` — fluxo de áudio, IPC e API Aladhan.
 - `docs/MASTER_DOCUMENTATION.md` — documento mestre de negócios e engenharia (fonte única de verdade).
+
+## Requisitos de Instalação e Conectividade
+- **Binário local:** distribuições .exe (Windows) e .app (macOS) com dependências embarcadas.
+- **Conectividade mínima:** internet necessária apenas para (1) onboarding/licenciamento, (2) sincronizar horários a cada 10 dias e (3) baixar/atualizar áudios do Adhan via CDN. Operação diária funciona offline por até 30 dias com o cache local.
+- **Armazenamento local:** requisitos para cache de 40 dias de horários e arquivos de áudio. Garantir permissões de escrita no diretório de dados do app.
