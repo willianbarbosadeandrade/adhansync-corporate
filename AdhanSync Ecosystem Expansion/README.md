@@ -48,6 +48,16 @@ See `.env.example`:
 - `npm run lint`: ESLint
 - `npm run test`: Vitest
 
+## CI
+
+GitHub Actions workflow: `.github/workflows/frontend-ci.yml`
+
+Pipeline gate:
+- typecheck
+- lint
+- test
+- build
+
 ## Documentation Index
 
 Full technical documentation is in [`docs/`](./docs):

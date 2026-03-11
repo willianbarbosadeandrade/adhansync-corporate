@@ -6,6 +6,7 @@
 - [ ] `npm run lint` passes
 - [ ] `npm run test` passes
 - [ ] `npm run build` passes
+- [ ] GitHub `Frontend CI` workflow is green
 - [ ] No secrets committed (`.env`, keys, tokens)
 - [ ] API base URL configured per environment
 - [ ] Security review of auth/billing changes completed

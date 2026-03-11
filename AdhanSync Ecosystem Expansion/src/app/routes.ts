@@ -1,23 +1,52 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router";
 import { Layout } from "./components/Layout";
-import { LandingPage } from "./components/LandingPage";
-import { PricingPage } from "./components/PricingPage";
-import { AccountPage } from "./components/AccountPage";
-import { LegalPage } from "./components/LegalPage";
-import { LoginPage } from "./components/LoginPage";
-import { AppLayout } from "./components/app/AppLayout";
-import { AppDashboard } from "./components/app/AppDashboard";
-import { AppSchedule } from "./components/app/AppSchedule";
-import { AppAudio } from "./components/app/AppAudio";
-import { AppAdhan } from "./components/app/AppAdhan";
-import { AppAnalytics } from "./components/app/AppAnalytics";
-import { AppSettings } from "./components/app/AppSettings";
-import { AppAdmin } from "./components/app/AppAdmin";
 import {
   RequireAuth,
   RequireEnterprisePlan,
   RequireProfessionalPlan,
 } from "./components/RouteGuards";
+
+const LandingPage = lazy(() =>
+  import("./components/LandingPage").then((module) => ({ default: module.LandingPage })),
+);
+const PricingPage = lazy(() =>
+  import("./components/PricingPage").then((module) => ({ default: module.PricingPage })),
+);
+const AccountPage = lazy(() =>
+  import("./components/AccountPage").then((module) => ({ default: module.AccountPage })),
+);
+const LegalPage = lazy(() =>
+  import("./components/LegalPage").then((module) => ({ default: module.LegalPage })),
+);
+const LoginPage = lazy(() =>
+  import("./components/LoginPage").then((module) => ({ default: module.LoginPage })),
+);
+
+const AppLayout = lazy(() =>
+  import("./components/app/AppLayout").then((module) => ({ default: module.AppLayout })),
+);
+const AppDashboard = lazy(() =>
+  import("./components/app/AppDashboard").then((module) => ({ default: module.AppDashboard })),
+);
+const AppSchedule = lazy(() =>
+  import("./components/app/AppSchedule").then((module) => ({ default: module.AppSchedule })),
+);
+const AppAudio = lazy(() =>
+  import("./components/app/AppAudio").then((module) => ({ default: module.AppAudio })),
+);
+const AppAdhan = lazy(() =>
+  import("./components/app/AppAdhan").then((module) => ({ default: module.AppAdhan })),
+);
+const AppAnalytics = lazy(() =>
+  import("./components/app/AppAnalytics").then((module) => ({ default: module.AppAnalytics })),
+);
+const AppSettings = lazy(() =>
+  import("./components/app/AppSettings").then((module) => ({ default: module.AppSettings })),
+);
+const AppAdmin = lazy(() =>
+  import("./components/app/AppAdmin").then((module) => ({ default: module.AppAdmin })),
+);
 
 export const router = createBrowserRouter([
   {

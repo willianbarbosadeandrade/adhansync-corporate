@@ -19,6 +19,15 @@ Run in order:
 4. `npm run test`
 5. `npm run build`
 
+## GitHub CI
+
+Workflow file: `.github/workflows/frontend-ci.yml`
+
+It executes the same quality gate (`typecheck`, `lint`, `test`, `build`) on:
+
+- pull requests touching frontend files
+- pushes to `main` touching frontend files
+
 ## What Is Covered Today
 
 - TypeScript static checks
